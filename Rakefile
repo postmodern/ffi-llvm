@@ -4,7 +4,7 @@ require 'rubygems'
 require 'hoe'
 require './lib/llvm/version.rb'
 
-Hoe.new('llvm-ffi', FFI::LLVM::VERSION) do |p|
+Hoe.spec('llvm-ffi') do |p|
   p.rubyforge_name = 'llvm-ffi'
   p.developer('Postmodern','postmodern.mod3@gmail.com')
   p.remote_rdoc_dir = ''
