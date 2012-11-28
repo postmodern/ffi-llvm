@@ -6,7 +6,7 @@ module FFI
   module LLVM
     extend FFI::Library
 
-    ffi_lib 'libLLVMCore.so'
+    ffi_lib 'libLLVM-3.0.so'
 
     attach_function :"LLVMDisposeMessage", [:pointer], :void
 

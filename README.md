@@ -7,7 +7,7 @@
 
 ## Description
 
-Ruby FFI bindings for LLVM.
+Ruby FFI bindings for [LLVM].
 
 The LLVM Project is a collection of modular and reusable compiler and
 toolchain technologies. Despite its name, LLVM has little to do with
@@ -22,6 +22,7 @@ can be used to build them.
 
 ## Requirements
 
+* [LLVM] >= 3.0
 * [ffi] ~> 1.0
 
 ## Install
@@ -35,3 +36,4 @@ Copyright (c) 2009-2012 Hal Brodigan
 See {file:LICENSE.txt} for details.
 
 [ffi]: https://github.com/ffi/ffi#readme
+[LLVM]: http://llvm.org/
