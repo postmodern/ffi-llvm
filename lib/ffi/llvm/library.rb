@@ -11,7 +11,7 @@ module FFI
     attach_function :"LLVMDisposeMessage", [:pointer], :void
 
     attach_function :"LLVMModuleCreateWithName", [:string], :llvm_module_ref
-    attach_function :"LLVMDisposeModel", [:llvm_module_ref], :void
+    # XXX: attach_function :"LLVMDisposeModel", [:llvm_module_ref], :void
 
     attach_function :"LLVMGetDataLayout", [:llvm_module_ref], :string
     attach_function :"LLVMSetDataLayout", [:llvm_module_ref, :string], :void
@@ -19,8 +19,8 @@ module FFI
     attach_function :"LLVMGetTarget", [:llvm_module_ref], :string
     attach_function :"LLVMSetTarget", [:llvm_module_ref, :string], :void
 
-    attach_function :"LLVMAddTypeName", [:llvm_module_ref, :string, :llvm_type_ref], :int
-    attach_function :"LLVMDeleteTypeName", [:llvm_module_ref, :string], :void
+    # XXX: attach_function :"LLVMAddTypeName", [:llvm_module_ref, :string, :llvm_type_ref], :int
+    # XXX: attach_function :"LLVMDeleteTypeName", [:llvm_module_ref, :string], :void
 
     attach_function :"LLVMDumpModule", [:llvm_module_ref], :void
 
@@ -32,7 +32,7 @@ module FFI
     attach_function :"LLVMInt32Type", [], :llvm_type_ref
     attach_function :"LLVMInt64Type", [], :llvm_type_ref
     attach_function :"LLVMIntType", [], :llvm_type_ref
-    attach_function :"LLVMIntTypeWidth", [:llvm_type_ref], :uint
+    # XXX: attach_function :"LLVMIntTypeWidth", [:llvm_type_ref], :uint
 
     # Operations on real types
     attach_function :"LLVMFloatType", [], :llvm_type_ref
@@ -67,13 +67,13 @@ module FFI
     # Operations on other types
     attach_function :"LLVMVoidType", [], :llvm_type_ref
     attach_function :"LLVMLabelType", [], :llvm_type_ref
-    attach_function :"LLVMOpaqueType", [], :llvm_type_ref
+    # XXX: attach_function :"LLVMOpaqueType", [], :llvm_type_ref
 
     # Operations on type handles
-    attach_function :"LLVMCreateTypeHandle", [:llvm_type_ref], :llvm_type_handle_ref
-    attach_function :"LLVMRefineType", [:llvm_type_ref, :llvm_type_ref], :void
-    attach_function :"LLVMResolveTypeHandle", [:llvm_type_handle_ref], :llvm_type_ref
-    attach_function :"LLVMDisposeTypeHandle", [:llvm_type_handle_ref], :void
+    # XXX: attach_function :"LLVMCreateTypeHandle", [:llvm_type_ref], :llvm_type_handler_ref
+    # attach_function :"LLVMRefineType", [:llvm_type_ref, :llvm_type_ref], :void
+    # XXX: attach_function :"LLVMResolveTypeHandle", [:llvm_type_handler_ref], :llvm_type_ref
+    # XXX: attach_function :"LLVMDisposeTypeHandle", [:llvm_type_handler_ref], :void
 
     #
     # ## Values:
@@ -96,7 +96,7 @@ module FFI
     attach_function :"LLVMIsUndef", [:llvm_value_ref], :int
 
     # Operations on scalar constants
-    attach_function :"LLVMConstInt", [:llvm_type_ref, :ulonglong, :int], :llvm_value_ref
+    attach_function :"LLVMConstInt", [:llvm_type_ref, :ulong_long, :int], :llvm_value_ref
     attach_function :"LLVMConstReal", [:llvm_type_ref, :double], :llvm_value_ref
     attach_function :"LLVMConstRealOfString", [:llvm_type_ref, :string], :llvm_value_ref
 
@@ -162,13 +162,13 @@ module FFI
 
     # Operations on global variables
     attach_function :"LLVMAddGlobal", [:llvm_module_ref, :llvm_type_ref, :string], :llvm_value_ref
-    attach_function :"LLVMGetNameGlobal", [:llvm_module_ref, :string], :llvm_value_ref
+    # XXX: attach_function :"LLVMGetNameGlobal", [:llvm_module_ref, :string], :llvm_value_ref
     attach_function :"LLVMGetFirstGlobal", [:llvm_module_ref], :llvm_value_ref
     attach_function :"LLVMGetLastGlobal", [:llvm_module_ref], :llvm_value_ref
     attach_function :"LLVMGetNextGlobal", [:llvm_value_ref], :llvm_value_ref
     attach_function :"LLVMGetPreviousGlobal", [:llvm_value_ref], :llvm_value_ref
     attach_function :"LLVMDeleteGlobal", [:llvm_value_ref], :void
-    attach_function :"LLVM_GetInitializer", [:llvm_value_ref], :llvm_value_ref
+    # XXX: attach_function :"LLVM_GetInitializer", [:llvm_value_ref], :llvm_value_ref
     attach_function :"LLVMSetInitializer", [:llvm_value_ref, :llvm_value_ref], :void
     attach_function :"LLVMIsThreadLocal", [:llvm_value_ref], :int
     attach_function :"LLVMSetThreadLocal", [:llvm_value_ref, :int], :void
@@ -186,7 +186,7 @@ module FFI
     attach_function :"LLVMGetNextFunction", [:llvm_value_ref], :llvm_value_ref
     attach_function :"LLVMGetPreviousFunction", [:llvm_value_ref], :llvm_value_ref
     attach_function :"LLVMDeleteFunction", [:llvm_value_ref], :void
-    attach_function :"LLVMGetInstrinsicID", [:llvm_value_ref], :uint
+    # XXX: attach_function :"LLVMGetInstrinsicID", [:llvm_value_ref], :uint
     attach_function :"LLVMGetFunctionCallConv", [:llvm_value_ref], :uint
     attach_function :"LLVMSetFunctionCallConv", [:llvm_value_ref, :uint], :void
     attach_function :"LLVMGetGC", [:llvm_value_ref], :string
