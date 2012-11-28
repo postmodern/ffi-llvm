@@ -1,8 +1,0 @@
-History.txt
-Manifest.txt
-Rakefile
-README.txt
-lib/llvm.rb
-lib/llvm/ffi.rb
-lib/llvm/typedefs.rb
-lib/llvm/version.rb
