@@ -174,7 +174,7 @@ module FFI
     # == Values:
     #
     # The bulk of LLVM's object model consists of values, which comprise a
-    # veryrich type hierarchy.
+    # very rich type hierarchy.
     #
     
     attach_function :"LLVMTypeOf", [:llvm_value_ref], :llvm_type_ref
